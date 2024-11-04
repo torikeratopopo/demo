@@ -21,17 +21,14 @@
     }
 
 	  
-     /* 背景の設定 */
-    .background {
+     /* 背景動画のスタイル */
+    .background-video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('./1110805971-preview.mp4/'); /* 背景画像のパス */
-      background-size: cover; /* 背景を画面全体にフィット */
-      background-position: center; /* 中央に位置合わせ */
-      background-repeat: no-repeat;
+      object-fit: cover; /* 画面全体にフィット */
       z-index: -2;
     }
 	  
@@ -52,7 +49,11 @@
 </head>
 <body>
   <!-- 背景動画 -->
-  <div class="background"></div>
+  <!-- 背景動画 -->
+  <video class="background-video" autoplay loop muted playsinline>
+    <source src="./1110805971-preview.mp4" type="video/mp4">
+    お使いのブラウザは動画に対応していません。
+  </video>
 	
 	  <!-- 重ねる動画（乗算効果付き） -->
   <video class="overlay-video" autoplay loop muted>
