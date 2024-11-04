@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アニメーションページ</title>
+  <style>
+    /* 背景動画 */
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+	  
+	   /* 動画に乗算効果を設定 */
+    .overlay-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      mix-blend-mode: multiply;
+    }
+
+    /* ロゴのアニメーション */
+    .logo {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%) scaleY(0);
+      transform-origin: bottom;
+      animation: grow 1.5s ease-out forwards;
+    }
+    @keyframes grow {
+      0% { transform: translateX(-50%) scaleY(0); }
+      100% { transform: translateX(-50%) scaleY(1); }
+    }
+    /* 植物イラストのフェードイン */
+    .plant-illustration {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: fadeIn 2s 2s ease forwards;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- 背景動画 -->
+  <video class="background-video" autoplay loop muted>
+    <source src="./images/video/1110805971-preview.mp4" type="video/mp4">
+  </video>
+	
+	  <!-- 重ねる動画（乗算効果付き） -->
+  <video class="overlay-video" autoplay loop muted>
+    <source src="./images/video/entrenous_hp_illust_3.mp4" type="video/mp4">
+  </video>
+
+  <!-- ロゴ -->
+  <div class="logo">
+    <img src=" " alt=" " width=" ">
+  </div>
+
+  <!-- 植物イラスト -->
+  <div class="plant-illustration">
+    <img src="path/to/plant.svg" alt="植物イラスト" width="100">
+  </div>
+</body>
+</html>
